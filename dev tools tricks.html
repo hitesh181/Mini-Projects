@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<p onclick = change()>This is a paragraph.</p>
+</body>
+<script>
+var p = document.querySelector('p');
+
+var dogs = [{name:'Hugo', age:7}, {name:'Snickers', age:12}];
+
+function change(){
+	p.style.color = '#BADA55';
+    p.style.fontSize = '40px';
+    }
+
+//Regular
+console.log("Hello");
+//Interpolate
+console.log("This is an interpolated comment %s fuck yeah", '+poop');    
+//styled
+console.log("%c this is styled comment", "font-size:25px; color:red");
+//warning
+console.warn("Warning from my end");
+//info
+console.info("This is an info comment");
+//error
+console.error("Error from me");
+//Assertion
+console.assert(1==1, "Assert was false, thus this error");
+//clear
+console.clear()
+//grouping
+dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`this is ${dog.name}`);
+        console.log(`He is ${dog.age} years old`);
+        console.groupEnd(`${dog.name}`);
+})
+
+//Timeing
+console.time('Fetching data');
+fetch('https://api.github.com/users/wesbos')
+.then(data => data.json())
+.then(data => {
+        console.timeEnd('Fetching data');
+        console.log(data);
+})
+
+console.table(dogs);
+</script>
+</html>
