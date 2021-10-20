@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+
+</body>
+<script>
+const max = 200;
+const min = 100;
+var i=0;
+var a =  Math.round(Math.random()*(max - min) +min);
+const interval = setInterval(function(){
+                    if(i==a)
+                    	clearInterval(interval);
+					typeWriter(i);
+                    i++;
+                    },1000/60);
+function typeWriter(x){
+	document.querySelector('h1').innerHTML = x +"+";
+    }
+</script>
+</html>
